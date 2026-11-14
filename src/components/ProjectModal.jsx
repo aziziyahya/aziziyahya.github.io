@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, Calendar, ChevronLeft, ChevronRight, Maximize2, Minimize2 } from 'lucide-react';
+import { X, CheckCircle2, Calendar, ChevronLeft, ChevronRight, Maximize2, Minimize2, Copy, Check, ExternalLink } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function ProjectModal({ project, initialIndex = 0, initialFullscreen = false, onClose }) {
@@ -7,6 +7,7 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
   const [isLightboxOpen, setIsLightboxOpen] = useState(initialFullscreen || false);
   const [isNativeFs, setIsNativeFs] = useState(false);
   const [lightboxTouchStartX, setLightboxTouchStartX] = useState(null);
+  const [copied, setCopied] = useState(false);
 
   const gallery = project?.gallery && project.gallery.length > 0
     ? project.gallery
@@ -99,6 +100,16 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
     setLightboxTouchStartX(null);
   };
 
+  const handleCopyLink = (e) => {
+    if (e) e.stopPropagation();
+    if (project?.links?.github) {
+      navigator.clipboard.writeText(project.links.github).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }).catch(() => {});
+    }
+  };
+
   return (
     <>
       <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
@@ -143,7 +154,7 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                   key={activeImgIndex}
                   src={currentImg.url}
                   alt={currentImg.caption || project.title}
-                  className="card-img modal-main-img"
+                  className="card-img modal-main-img modal-main-img-fade"
                 />
 
                 {/* Full Screen Button inside Modal Image */}
@@ -215,6 +226,13 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                   ))}
                 </div>
               )}
+
+              {/* Desktop keyboard hint footer */}
+              <div className="gallery-keyboard-hint">
+                <span><kbd className="hint-kbd">←</kbd> <kbd className="hint-kbd">→</kbd> Navigate screenshots</span>
+                <span className="hint-divider">•</span>
+                <span>Click image to zoom</span>
+              </div>
             </div>
 
             <div className="modal-body">
@@ -226,6 +244,18 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                 <span className="inst-dot"></span>
                 <span>{project.institution}</span>
               </p>
+
+              {/* Engineering System Specs Grid */}
+              {project.specs && (
+                <div className="modal-specs-grid">
+                  {project.specs.map((spec, idx) => (
+                    <div key={idx} className="modal-spec-card">
+                      <div className="spec-label">{spec.label}</div>
+                      <div className="spec-val">{spec.value}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="modal-divider"></div>
 
@@ -268,20 +298,33 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                   >
                     <GithubIcon size={18} />
                     <span>View GitHub Repository</span>
+                    <ExternalLink size={14} style={{ marginLeft: '4px', opacity: 0.8 }} />
                   </a>
+                )}
+
+                {project.links.github && (
+                  <button
+                    type="button"
+                    onClick={handleCopyLink}
+                    className={`btn modal-btn modal-btn-copy ${copied ? 'copied' : ''}`}
+                    title="Copy GitHub repository link to clipboard"
+                  >
+                    {copied ? <Check size={16} /> : <Copy size={16} />}
+                    <span>{copied ? 'Copied Link!' : 'Copy Link'}</span>
+                  </button>
                 )}
 
                 <button
                   onClick={onClose}
-                  className="btn btn-secondary modal-btn"
+                  className="btn btn-secondary modal-btn modal-btn-close"
                 >
                   <span>Close Window</span>
                 </button>
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
 
       {/* Fullscreen Lightbox Overlay */}
       {isLightboxOpen && (
