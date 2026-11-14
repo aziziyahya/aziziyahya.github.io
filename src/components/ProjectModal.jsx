@@ -104,14 +104,18 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
       <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <div className="modal-sticky-header">
-            <button
-              className="modal-close-btn"
-              onClick={onClose}
-              aria-label="Close dialog"
-              title="Close"
-            >
-              <X size={18} />
-            </button>
+            <div className="modal-header-left">
+              <button
+                className="modal-close-btn"
+                onClick={onClose}
+                aria-label="Close dialog"
+                title="Close (Esc)"
+              >
+                <X size={18} />
+                <span className="close-esc-badge">ESC</span>
+              </button>
+              <span className="modal-header-title">{project.title}</span>
+            </div>
 
             <div className="modal-header-badges">
               <span className="card-badge-inline">
@@ -135,134 +139,147 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                 style={{ cursor: 'zoom-in' }}
                 title="Click to view full screen"
               >
-              <img
-                src={currentImg.url}
-                alt={currentImg.caption || project.title}
-                className="card-img modal-main-img"
-              />
+                <img
+                  key={activeImgIndex}
+                  src={currentImg.url}
+                  alt={currentImg.caption || project.title}
+                  className="card-img modal-main-img"
+                />
 
-              {/* Full Screen Button inside Modal Image */}
-              <button
-                type="button"
-                className="gallery-expand-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsLightboxOpen(true);
-                }}
-                aria-label="View full screen"
-                title="View full screen (or click image)"
-              >
-                <Maximize2 size={13} />
-                <span>Full Screen</span>
-              </button>
+                {/* Full Screen Button inside Modal Image */}
+                <button
+                  type="button"
+                  className="gallery-expand-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsLightboxOpen(true);
+                  }}
+                  aria-label="View full screen"
+                  title="View full screen (or click image to expand)"
+                >
+                  <Maximize2 size={13} />
+                  <span>Full Screen</span>
+                </button>
+
+                {gallery.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      className="gallery-nav-btn gallery-prev"
+                      onClick={handlePrev}
+                      aria-label="Previous image"
+                      title="Previous screenshot (Left Arrow)"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button
+                      type="button"
+                      className="gallery-nav-btn gallery-next"
+                      onClick={handleNext}
+                      aria-label="Next image"
+                      title="Next screenshot (Right Arrow)"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                    <div className="gallery-counter">
+                      {activeImgIndex + 1} / {gallery.length}
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {currentImg.caption && (
+                <div className="gallery-caption">
+                  <span className="caption-tag">Figure {activeImgIndex + 1}</span>
+                  <span className="caption-text">{currentImg.caption}</span>
+                </div>
+              )}
 
               {gallery.length > 1 && (
-                <>
-                  <button
-                    type="button"
-                    className="gallery-nav-btn gallery-prev"
-                    onClick={handlePrev}
-                    aria-label="Previous image"
-                    title="Previous image"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button
-                    type="button"
-                    className="gallery-nav-btn gallery-next"
-                    onClick={handleNext}
-                    aria-label="Next image"
-                    title="Next image"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                  <div className="gallery-counter">
-                    {activeImgIndex + 1} / {gallery.length}
-                  </div>
-                </>
+                <div className="gallery-thumb-strip">
+                  {gallery.map((img, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      className={`gallery-thumb-btn ${idx === activeImgIndex ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveImgIndex(idx);
+                      }}
+                      aria-label={`View image ${idx + 1}`}
+                      title={img.caption || `Image ${idx + 1}`}
+                    >
+                      <img src={img.url} alt="" className="thumb-img" />
+                      <span className="thumb-index-num">{idx + 1}</span>
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
 
-            {currentImg.caption && (
-              <div className="gallery-caption">
-                {currentImg.caption}
-              </div>
-            )}
+            <div className="modal-body">
+              <div className="modal-course-badge">{project.course}</div>
+              <h2 className="modal-title">
+                {project.title}
+              </h2>
+              <p className="modal-institution">
+                <span className="inst-dot"></span>
+                <span>{project.institution}</span>
+              </p>
 
-            {gallery.length > 1 && (
-              <div className="gallery-thumb-strip">
-                {gallery.map((img, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`gallery-thumb-btn ${idx === activeImgIndex ? 'active' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setActiveImgIndex(idx);
-                    }}
-                    aria-label={`View image ${idx + 1}`}
-                    title={img.caption || `Image ${idx + 1}`}
+              <div className="modal-divider"></div>
+
+              <p className="modal-description">
+                {project.fullDescription}
+              </p>
+
+              <div className="modal-highlights-section">
+                <h3 className="modal-section-heading">
+                  Key Technical Highlights
+                </h3>
+                <ul className="modal-features-list">
+                  {project.features.map((feat, idx) => (
+                    <li key={idx} className="modal-feature-item">
+                      <div className="feature-icon-wrapper">
+                        <CheckCircle2 size={15} className="feature-icon" />
+                      </div>
+                      <span className="feature-text">{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="modal-tags-section">
+                <div className="modal-tags-label">Technologies & Hardware Tools:</div>
+                <div className="card-tags modal-tags">
+                  {project.tags.map((t, idx) => (
+                    <span key={idx} className="tag modal-tag-chip">{t}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="modal-actions">
+                {project.links.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary modal-btn"
                   >
-                    <img src={img.url} alt="" className="thumb-img" />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+                    <GithubIcon size={18} />
+                    <span>View GitHub Repository</span>
+                  </a>
+                )}
 
-          <div className="modal-body">
-            <div className="card-header-meta">{project.course}</div>
-            <h2 className="modal-title">
-              {project.title}
-            </h2>
-            <p className="modal-institution">
-              {project.institution}
-            </p>
-
-            <p className="modal-description">
-              {project.fullDescription}
-            </p>
-
-            <h3 className="modal-section-heading">
-              Key Project Highlights
-            </h3>
-            <ul className="modal-features-list">
-              {project.features.map((feat, idx) => (
-                <li key={idx} className="modal-feature-item">
-                  <CheckCircle2 size={18} className="feature-icon" />
-                  <span>{feat}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="card-tags modal-tags">
-              {project.tags.map((t, idx) => (
-                <span key={idx} className="tag">{t}</span>
-              ))}
-            </div>
-
-            <div className="modal-actions">
-              {project.links.github && (
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary modal-btn"
+                <button
+                  onClick={onClose}
+                  className="btn btn-secondary modal-btn"
                 >
-                  <GithubIcon size={18} />
-                  <span>View GitHub Repository</span>
-                </a>
-              )}
-
-              <button
-                onClick={onClose}
-                className="btn btn-secondary modal-btn"
-              >
-                <span>Close Window</span>
-              </button>
+                  <span>Close Window</span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
