@@ -2201,8 +2201,8 @@ p {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     overflow: visible;
-    height: 58vh;
-    height: 58dvh;
+    height: 50vh;
+    height: 50dvh;
     display: flex;
     flex-direction: column;
   }
