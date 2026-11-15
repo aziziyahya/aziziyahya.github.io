@@ -218,70 +218,71 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
             </div>
 
             <div className="modal-body">
-              <div className="modal-course-badge">{project.course}</div>
-              <h2 className="modal-title">
-                {project.title}
-              </h2>
-              <p className="modal-institution">
-                <span className="inst-dot"></span>
-                <span>{project.institution}</span>
-              </p>
+              <div className="modal-body-scroll">
+                <div className="modal-course-badge">{project.course}</div>
+                <h2 className="modal-title">
+                  {project.title}
+                </h2>
+                <p className="modal-institution">
+                  <span className="inst-dot"></span>
+                  <span>{project.institution}</span>
+                </p>
 
-              <div className="modal-divider"></div>
+                <div className="modal-divider"></div>
 
-              <p className="modal-description">
-                {project.fullDescription}
-              </p>
+                <p className="modal-description">
+                  {project.fullDescription}
+                </p>
 
-              <div className="modal-highlights-section">
-                <h3 className="modal-section-heading">
-                  Key Technical Highlights
-                </h3>
-                <ul className="modal-features-list">
-                  {project.features.map((feat, idx) => (
-                    <li key={idx} className="modal-feature-item">
-                      <div className="feature-icon-wrapper">
-                        <CheckCircle2 size={15} className="feature-icon" />
-                      </div>
-                      <span className="feature-text">{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="modal-highlights-section">
+                  <h3 className="modal-section-heading">
+                    Key Technical Highlights
+                  </h3>
+                  <ul className="modal-features-list">
+                    {project.features.map((feat, idx) => (
+                      <li key={idx} className="modal-feature-item">
+                        <div className="feature-icon-wrapper">
+                          <CheckCircle2 size={15} className="feature-icon" />
+                        </div>
+                        <span className="feature-text">{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className="modal-tags-section">
-                <div className="modal-tags-label">Technologies & Hardware Tools:</div>
-                <div className="card-tags modal-tags">
-                  {project.tags.map((t, idx) => (
-                    <span key={idx} className="tag modal-tag-chip">{t}</span>
-                  ))}
+                <div className="modal-tags-section">
+                  <div className="modal-tags-label">Technologies & Hardware Tools:</div>
+                  <div className="card-tags modal-tags">
+                    {project.tags.map((t, idx) => (
+                      <span key={idx} className="tag modal-tag-chip">{t}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
+              <div className="modal-actions">
+                {project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary modal-btn modal-btn-github"
+                    title="View GitHub Repository"
+                  >
+                    <GithubIcon size={18} />
+                    <span>View GitHub Repository</span>
+                    <ExternalLink size={15} style={{ marginLeft: '4px', opacity: 0.85 }} />
+                  </a>
+                )}
+
+                <button
+                  onClick={onClose}
+                  className="btn btn-secondary modal-btn modal-btn-close"
+                >
+                  <span>Close Window</span>
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div className="modal-actions">
-            {project.links?.github && (
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary modal-btn modal-btn-github"
-                title="View GitHub Repository"
-              >
-                <GithubIcon size={18} />
-                <span>View GitHub Repository</span>
-                <ExternalLink size={15} style={{ marginLeft: '4px', opacity: 0.85 }} />
-              </a>
-            )}
-
-            <button
-              onClick={onClose}
-              className="btn btn-secondary modal-btn modal-btn-close"
-            >
-              <span>Close Window</span>
-            </button>
           </div>
         </div>
       </div>
