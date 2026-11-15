@@ -1052,15 +1052,7 @@ p {
   vertical-align: middle;
 }
 
-.modal-header-title {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 420px;
-}
+
 
 .modal-header-badges {
   display: flex;
@@ -2216,10 +2208,7 @@ p {
     padding-right: max(16px, var(--safe-right));
   }
 
-  .modal-header-title {
-    max-width: 150px;
-    font-size: 0.8rem;
-  }
+
 
   .card-date-inline {
     display: none;

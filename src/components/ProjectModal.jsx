@@ -114,7 +114,6 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                 <X size={18} />
                 <span className="close-esc-badge">ESC</span>
               </button>
-              <span className="modal-header-title">{project.title}</span>
             </div>
 
             <div className="modal-header-badges">
