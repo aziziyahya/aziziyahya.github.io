@@ -2231,16 +2231,7 @@ p {
   }
 
   .gallery-thumb-strip {
-    padding: 10px 14px;
-    gap: 8px;
-  }
-
-  .gallery-thumb-btn {
-    width: 58px;
-    height: 40px;
-    min-width: 58px;
-    min-height: 40px;
-    border-radius: 6px;
+    display: none;
   }
 
   .modal-body {
