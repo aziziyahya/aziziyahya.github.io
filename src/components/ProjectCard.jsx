@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Calendar, ChevronLeft, ChevronRight, Images, Maximize2 } from 'lucide-react';
+import { ArrowUpRight, Calendar, ChevronLeft, ChevronRight, ExternalLink, Images, Maximize2 } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function ProjectCard({ project, onSelect }) {
@@ -183,10 +183,12 @@ export default function ProjectCard({ project, onSelect }) {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary btn-card-action"
-              title="GitHub Repository"
+              title="View GitHub Repository"
+              aria-label={`View GitHub Repository for ${project.title}`}
             >
               <GithubIcon size={16} />
-              <span>Code</span>
+              <span>GitHub Repo</span>
+              <ExternalLink size={13} style={{ opacity: 0.8, marginLeft: '2px' }} />
             </a>
           )}
         </div>

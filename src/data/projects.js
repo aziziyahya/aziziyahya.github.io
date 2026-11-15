@@ -20,12 +20,6 @@ export const projectsData = [
       { url: "/images/robot_cad.png", caption: "Isometric 3D CAD mechanical assembly render" }
     ],
     tags: ["ESP32", "FreeRTOS", "PID Control", "C++", "MPU-6050", "VL53L0X", "TB6612FNG", "WebSockets"],
-    specs: [
-      { label: "Control Loop", value: "200 Hz FreeRTOS" },
-      { label: "Hardware Core", value: "ESP32 Dual-Core" },
-      { label: "Sensor Fusion", value: "MPU-6050 (α = 0.96)" },
-      { label: "Telemetry", value: "Async WebSockets" }
-    ],
     features: [
       "Real-time deterministic PID stabilization loop executed at 200 Hz under FreeRTOS",
       "Sensor fusion using a complementary filter (α = 0.96) combining MPU-6050 accelerometer & gyro rate",
@@ -58,12 +52,6 @@ export const projectsData = [
       { url: "/images/plc_sorting.png", caption: "Sorting Station: Optical/inductive sensors & pneumatic deflector chutes" }
     ],
     tags: ["Siemens S7 PLC", "TIA Portal V16", "Festo MPS", "PROFINET", "Ladder Logic (LAD)", "Pneumatics", "Safety Interlocks"],
-    specs: [
-      { label: "Controller", value: "Siemens S7 (TIA V16)" },
-      { label: "Station Rig", value: "Festo Modular MPS" },
-      { label: "Fieldbus Bus", value: "PROFINET Network" },
-      { label: "Safety System", value: "Hardwired E-Stop" }
-    ],
     features: [
       "Distribution Station: Gravity magazine feed with optical timeout detection (3-second starvation alert)",
       "Joining Station: Precision pneumatic assembly cylinder with cap presence verification and jamming protection",
@@ -96,12 +84,6 @@ export const projectsData = [
       { url: "/images/python_export.png", caption: "Data Portability: Native OS file dialog for CSV report exporting" }
     ],
     tags: ["Python 3", "Tkinter", "ttk", "JSON Persistence", "CSV Export", "Desktop GUI", "Zero Dependencies"],
-    specs: [
-      { label: "Language", value: "Python 3 Standard" },
-      { label: "GUI Framework", value: "Tkinter / ttk" },
-      { label: "Data Engine", value: "Atomic JSON Store" },
-      { label: "Portability", value: "Native OS CSV" }
-    ],
     features: [
       "Executive Dashboard: Real-time academic metrics and top-10 urgent deadlines sorted via datetime.strptime",
       "Course & Subject Management: Full CRUD operations with uppercase uniqueness constraints",
