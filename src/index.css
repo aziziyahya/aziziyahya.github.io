@@ -1533,6 +1533,11 @@ p {
   text-decoration: none;
   transition: all 0.2s ease;
   font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.modal-btn svg {
+  flex-shrink: 0;
 }
 
 .modal-btn-github {
@@ -2248,7 +2253,7 @@ p {
 
   .modal-body-scroll {
     overflow: visible;
-    padding: 20px 16px 16px;
+    padding: 20px 16px calc(125px + var(--safe-bottom));
   }
 
   .modal-metrics-grid {
@@ -2260,31 +2265,41 @@ p {
     bottom: 0;
     margin-top: auto;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    padding: 12px 16px max(14px, var(--safe-bottom));
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px max(12px, var(--safe-bottom));
     background: rgba(9, 13, 22, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-top: 1px solid var(--border-color);
     z-index: 25;
   }
 
   .modal-btn {
-    height: 44px;
-    min-height: 44px;
-    font-size: 0.84rem;
+    width: 100%;
+    height: 46px;
+    min-height: 46px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-radius: var(--radius-sm);
   }
 
   .modal-btn-github {
-    flex: 1;
-    min-width: 0;
+    width: 100%;
+    background: var(--accent-cyan);
+    color: #040812;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
   }
 
   .modal-btn-close {
-    flex: 0 0 auto;
-    padding: 0 16px;
-    white-space: nowrap;
+    width: 100%;
+    height: 38px;
+    min-height: 38px;
+    font-size: 0.84rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-muted);
   }
 
   /* Footer */
@@ -2333,5 +2348,18 @@ p {
 
   .modal-metrics-grid {
     grid-template-columns: 1fr;
+  }
+
+  .modal-btn {
+    height: 44px;
+    min-height: 44px;
+    font-size: 0.84rem;
+    gap: 6px;
+  }
+
+  .modal-btn-close {
+    height: 36px;
+    min-height: 36px;
+    font-size: 0.8rem;
   }
 }
