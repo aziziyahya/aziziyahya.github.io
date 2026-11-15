@@ -258,29 +258,30 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                 </div>
               </div>
 
-              <div className="modal-actions">
-                {project.links?.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary modal-btn modal-btn-github"
-                    title="View GitHub Repository"
-                  >
-                    <GithubIcon size={18} />
-                    <span>View GitHub Repository</span>
-                    <ExternalLink size={15} style={{ marginLeft: '4px', opacity: 0.85 }} />
-                  </a>
-                )}
-
-                <button
-                  onClick={onClose}
-                  className="btn btn-secondary modal-btn modal-btn-close"
-                >
-                  <span>Close Window</span>
-                </button>
-              </div>
             </div>
+          </div>
+
+          <div className="modal-actions">
+            {project.links?.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary modal-btn modal-btn-github"
+                title="View GitHub Repository"
+              >
+                <GithubIcon size={18} />
+                <span>View GitHub Repository</span>
+                <ExternalLink size={15} style={{ marginLeft: '4px', opacity: 0.85 }} />
+              </a>
+            )}
+
+            <button
+              onClick={onClose}
+              className="btn btn-secondary modal-btn modal-btn-close"
+            >
+              <span>Close Window</span>
+            </button>
           </div>
         </div>
       </div>
