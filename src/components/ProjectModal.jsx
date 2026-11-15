@@ -117,32 +117,15 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
               <span className="modal-header-title">{project.title}</span>
             </div>
 
-            <div className="modal-header-actions">
-              <div className="modal-header-badges">
-                <span className="card-badge-inline">
-                  <span className="badge-dot"></span>
-                  {project.category}
-                </span>
-                <span className="card-date-inline">
-                  <Calendar size={12} style={{ opacity: 0.75 }} />
-                  <span>{project.date}</span>
-                </span>
-              </div>
-
-              {project.links?.github && (
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-header-repo-btn"
-                  title="View GitHub Repository"
-                  aria-label={`View GitHub Repository for ${project.title}`}
-                >
-                  <GithubIcon size={14} />
-                  <span>GitHub Repo</span>
-                  <ExternalLink size={12} style={{ opacity: 0.8 }} />
-                </a>
-              )}
+            <div className="modal-header-badges">
+              <span className="card-badge-inline">
+                <span className="badge-dot"></span>
+                {project.category}
+              </span>
+              <span className="card-date-inline">
+                <Calendar size={12} style={{ opacity: 0.75 }} />
+                <span>{project.date}</span>
+              </span>
             </div>
           </div>
 
