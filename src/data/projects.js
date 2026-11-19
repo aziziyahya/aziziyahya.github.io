@@ -95,6 +95,39 @@ export const projectsData = [
       github: "https://github.com/aziziyahya/PYTHON_AssignmentManagementApplication",
       badge: "Desktop Application"
     }
+  },
+  {
+    id: "plc-colour-sorting-machine",
+    title: "Industrial Colour Counting & Sorting System",
+    category: "Industrial Automation",
+    categoryKey: "automation",
+    course: "TIA Portal Programming Level 1 (TIA-PRO1)",
+    institution: "Universiti Malaysia Perlis (UniMAP)",
+    date: "2026",
+    summary:
+      "Siemens S7-1500 PLC & KTP700 Basic HMI automated sorting system with Factory I/O 3D simulation, pneumatic pushers, and closed-loop fault detection.",
+    fullDescription:
+      "Developed as part of the Siemens TIA Portal Programming Level 1 (TIA-PRO1) certification at UniMAP. Controls a multi-conveyor automated sorting system (6m main belt, curved belt, and 3 sort chutes) via Siemens SIMATIC S7-1500 (CPU 1516-3 PN/DP) and KTP700 Basic PN HMI. Features optical vision and diffuse sensor part discrimination (Metal, Green, Blue), pneumatic pushers with limit reed switch stroke feedback, batch setpoint controls, and a multi-scenario safety fault matrix (lost part / conveyor jam detection and pusher obstruction monitoring).",
+    image: "/images/plc_sorting_system.png",
+    gallery: [
+      { url: "/images/plc_sorting_system.png", caption: "Full 3D digital twin Factory I/O simulation cell overview" },
+      { url: "/images/plc_sorting_hmi.png", caption: "WinCC KTP700 Basic HMI live running dashboard with animated sensors" },
+      { url: "/images/plc_sorting_panel.png", caption: "Physical control cabinet with illuminated buttons and digital LED counters" },
+      { url: "/images/plc_sorting_network.png", caption: "PROFINET subnet network topology connecting S7-1500 and KTP700" },
+      { url: "/images/plc_sorting_action.png", caption: "Pneumatic pusher diverting green raw material into chute" }
+    ],
+    tags: ["Siemens S7-1500", "TIA Portal v16", "KTP700 HMI", "Factory I/O", "PROFINET", "Ladder Logic (LAD)", "PLCSIM"],
+    features: [
+      "Modular Ladder Logic program structure using OB1, FCs (FC1–FC8), and instance-based FBs (FB1–FB3)",
+      "Multi-sensor discrimination using synchronized optical colour vision sensors and diffuse counters",
+      "Pneumatic pushers with closed-loop magnetic reed switch limit confirmation for jam prevention",
+      "WinCC Basic HMI with live plant layout animation, batch setpoint inputs, and real-time piece counting",
+      "Two-stage industrial fault alarm matrix with mandatory operator acknowledgment and reset protocols"
+    ],
+    links: {
+      github: "https://github.com/aziziyahya/PLC_AutomatedModularProduction WithSiemensAndFesto",
+      badge: "Siemens S7-1500 + HMI"
+    }
   }
 ];
 

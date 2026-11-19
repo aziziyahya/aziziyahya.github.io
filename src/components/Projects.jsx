@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { projectsData } from '../data/projects';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
@@ -10,10 +10,58 @@ export default function Projects() {
   const [initialImageIndex, setInitialImageIndex] = useState(0);
   const [openInFullscreen, setOpenInFullscreen] = useState(false);
 
+  // Deep-link support: auto-open modal if ?project=<id> or #<id> is in the URL
+  useEffect(() => {
+    const parseDeepLink = () => {
+      const params = new URLSearchParams(window.location.search);
+      const queryId = params.get('project');
+
+      const rawHash = window.location.hash.replace(/^#/, '');
+      const hashId = rawHash.startsWith('project-')
+        ? rawHash.replace('project-', '')
+        : rawHash;
+
+      const targetId = queryId || (hashId && hashId !== 'projects' ? hashId : null);
+
+      if (targetId) {
+        const found = projectsData.find(
+          (p) => p.id === targetId || p.id.toLowerCase() === targetId.toLowerCase()
+        );
+        if (found) {
+          setSelectedProject(found);
+          if (found.categoryKey) {
+            setFilter(found.categoryKey);
+          }
+        }
+      }
+    };
+
+    parseDeepLink();
+    window.addEventListener('popstate', parseDeepLink);
+    return () => window.removeEventListener('popstate', parseDeepLink);
+  }, []);
+
   const handleSelectProject = (project, imgIndex = 0, fullscreen = false) => {
     setSelectedProject(project);
     setInitialImageIndex(imgIndex);
     setOpenInFullscreen(fullscreen);
+
+    // Update URL parameter so the project is directly shareable
+    const url = new URL(window.location.href);
+    url.searchParams.set('project', project.id);
+    window.history.pushState({ projectId: project.id }, '', url.toString());
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    setOpenInFullscreen(false);
+
+    // Clean up query param from URL on close
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('project')) {
+      url.searchParams.delete('project');
+      window.history.pushState({}, '', url.pathname + (url.hash || ''));
+    }
   };
 
   const filteredProjects = filter === 'all'
@@ -81,10 +129,7 @@ export default function Projects() {
             project={selectedProject}
             initialIndex={initialImageIndex}
             initialFullscreen={openInFullscreen}
-            onClose={() => {
-              setSelectedProject(null);
-              setOpenInFullscreen(false);
-            }}
+            onClose={handleCloseModal}
           />
         )}
       </div>
