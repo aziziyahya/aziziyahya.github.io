@@ -11,18 +11,18 @@ export const projectsData = [
       "Autonomous inverted pendulum robot built on ESP32 running a deterministic 200 Hz FreeRTOS PID loop. Features sensor fusion, obstacle clearing, and an OTA Wi-Fi telemetry dashboard for live tuning.",
     fullDescription:
       "Developed for NMT22104: Data Acquisition Technology and Analysis II at UniMAP. The robot overcomes inverted pendulum structural instability while executing an autonomous arena-clearing mission: scanning, pursuing, and pushing five obstacles out of a 1-meter radius circular arena without crossing boundary lines. Includes an asynchronous Wi-Fi Web Dashboard for live telemetry and dynamic PID gain calibration.",
-    image: "/images/slide_11_robot_front.png",
+    image: "/images/slide_11_robot_front.avif",
     gallery: [
-      { url: "/images/slide_11_robot_front.png", caption: "Front chassis view with MPU-6050 & VL53L0X ToF laser sensor" },
-      { url: "/images/slide_11_robot_isometric.png", caption: "Assembled physical prototype 3/4 perspective view on workbench" },
-      { url: "/images/slide_16_balancing_test.png", caption: "Autonomous 200 Hz PID dynamic upright balance test on floor" },
-      { url: "/images/slide_17_arena_pushing.png", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
-      { url: "/images/slide_17_arena_boundary.png", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
-      { url: "/images/slide_10_circuit_schematic.png", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
-      { url: "/images/slide_13_dashboard_monitoring.png", caption: "Web Dashboard Suite (1/4): Real-time telemetry monitoring" },
-      { url: "/images/slide_13_dashboard_pid.png", caption: "Web Dashboard Suite (2/4): Dynamic over-the-air PID parameter tuning" },
-      { url: "/images/slide_13_dashboard_motor.png", caption: "Web Dashboard Suite (3/4): Motor deadband & acceleration calibration" },
-      { url: "/images/slide_13_dashboard_update.png", caption: "Web Dashboard Suite (4/4): Manual update, gyro recalibration & flash persistence" }
+      { url: "/images/slide_11_robot_front.avif", caption: "Front chassis view with MPU-6050 & VL53L0X ToF laser sensor" },
+      { url: "/images/slide_11_robot_isometric.avif", caption: "Assembled physical prototype 3/4 perspective view on workbench" },
+      { url: "/images/slide_16_balancing_test.avif", caption: "Autonomous 200 Hz PID dynamic upright balance test on floor" },
+      { url: "/images/slide_17_arena_pushing.avif", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
+      { url: "/images/slide_17_arena_boundary.avif", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
+      { url: "/images/slide_10_circuit_schematic.avif", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
+      { url: "/images/slide_13_dashboard_monitoring.avif", caption: "Web Dashboard Suite (1/4): Real-time telemetry monitoring" },
+      { url: "/images/slide_13_dashboard_pid.avif", caption: "Web Dashboard Suite (2/4): Dynamic over-the-air PID parameter tuning" },
+      { url: "/images/slide_13_dashboard_motor.avif", caption: "Web Dashboard Suite (3/4): Motor deadband & acceleration calibration" },
+      { url: "/images/slide_13_dashboard_update.avif", caption: "Web Dashboard Suite (4/4): Manual update, gyro recalibration & flash persistence" }
     ],
     tags: ["ESP32", "FreeRTOS", "PID Control", "C++", "MPU-6050", "VL53L0X", "TB6612FNG", "WebSockets"],
     features: [
@@ -49,12 +49,12 @@ export const projectsData = [
       "3-station Festo MPS manufacturing line integrated with Siemens PLC (TIA Portal V16) featuring a zero-latency hardwired safety interlock system.",
     fullDescription:
       "Designed and deployed a synchronized multi-station industrial automation manufacturing cell utilizing Festo Modular Production System (MPS) hardware and Siemens SIMATIC S7 PLC programmed in TIA Portal V16. Orchestrates raw workpiece distribution, precision cap assembly pressing, and multi-sensor automated sorting into target chutes.",
-    image: "/images/plc_system.png",
+    image: "/images/plc_system.avif",
     gallery: [
-      { url: "/images/plc_system.png", caption: "3-Station Festo MPS Conveyor Assembly & Sorting Line" },
-      { url: "/images/plc_distribution.png", caption: "Distribution Station: Workpiece gravity feeder & pneumatic ejector" },
-      { url: "/images/plc_joining.png", caption: "Joining Station: Pneumatic assembly head & cap insertion cylinder" },
-      { url: "/images/plc_sorting.png", caption: "Sorting Station: Optical/inductive sensors & pneumatic deflector chutes" }
+      { url: "/images/plc_system.avif", caption: "3-Station Festo MPS Conveyor Assembly & Sorting Line" },
+      { url: "/images/plc_distribution.avif", caption: "Distribution Station: Workpiece gravity feeder & pneumatic ejector" },
+      { url: "/images/plc_joining.avif", caption: "Joining Station: Pneumatic assembly head & cap insertion cylinder" },
+      { url: "/images/plc_sorting.avif", caption: "Sorting Station: Optical/inductive sensors & pneumatic deflector chutes" }
     ],
     tags: ["Siemens S7 PLC", "TIA Portal V16", "Festo MPS", "PROFINET", "Ladder Logic (LAD)", "Pneumatics", "Safety Interlocks"],
     features: [
@@ -81,12 +81,12 @@ export const projectsData = [
       "Python desktop application built with Tkinter/ttk featuring comprehensive CRUD operations, smart calendar month validation, and CSV export.",
     fullDescription:
       "Academic productivity tool developed in Python with Tkinter / ttk to manage student deadlines and coursework. Built without heavy third-party dependencies, the system features an intelligent calendar validation engine using calendar.monthrange, atomic JSON data persistence, and priority-sorted upcoming assignments.",
-    image: "/images/python_dashboard.png",
+    image: "/images/python_dashboard.avif",
     gallery: [
-      { url: "/images/python_dashboard.png", caption: "Executive Dashboard: Real-time metrics & urgent upcoming deadlines" },
-      { url: "/images/python_courses.png", caption: "Subject Management: Full CRUD operations & unique code validation" },
-      { url: "/images/python_assignments.png", caption: "Assignment Tracker: Treeview sorting & dynamic calendar date picker" },
-      { url: "/images/python_export.png", caption: "Data Portability: Native OS file dialog for CSV report exporting" }
+      { url: "/images/python_dashboard.avif", caption: "Executive Dashboard: Real-time metrics & urgent upcoming deadlines" },
+      { url: "/images/python_courses.avif", caption: "Subject Management: Full CRUD operations & unique code validation" },
+      { url: "/images/python_assignments.avif", caption: "Assignment Tracker: Treeview sorting & dynamic calendar date picker" },
+      { url: "/images/python_export.avif", caption: "Data Portability: Native OS file dialog for CSV report exporting" }
     ],
     tags: ["Python 3", "Tkinter", "ttk", "JSON Persistence", "CSV Export", "Desktop GUI", "Zero Dependencies"],
     features: [
@@ -113,13 +113,13 @@ export const projectsData = [
       "Siemens S7-1500 PLC & KTP700 Basic HMI automated sorting system with Factory I/O 3D simulation, pneumatic pushers, and closed-loop fault detection.",
     fullDescription:
       "Developed as part of the Siemens TIA Portal Programming Level 1 (TIA-PRO1) certification at UniMAP. Controls a multi-conveyor automated sorting system (6m main belt, curved belt, and 3 sort chutes) via Siemens SIMATIC S7-1500 (CPU 1516-3 PN/DP) and KTP700 Basic PN HMI. Features optical vision and diffuse sensor part discrimination (Metal, Green, Blue), pneumatic pushers with limit reed switch stroke feedback, batch setpoint controls, and a multi-scenario safety fault matrix (lost part / conveyor jam detection and pusher obstruction monitoring).",
-    image: "/images/plc_sorting_system.png",
+    image: "/images/plc_sorting_system.avif",
     gallery: [
-      { url: "/images/plc_sorting_system.png", caption: "Full 3D digital twin Factory I/O simulation cell overview" },
-      { url: "/images/plc_sorting_hmi.png", caption: "WinCC KTP700 Basic HMI live running dashboard with animated sensors" },
-      { url: "/images/plc_sorting_panel.png", caption: "Physical control cabinet with illuminated buttons and digital LED counters" },
-      { url: "/images/plc_sorting_network.png", caption: "PROFINET subnet network topology connecting S7-1500 and KTP700" },
-      { url: "/images/plc_sorting_action.png", caption: "Pneumatic pusher diverting green raw material into chute" }
+      { url: "/images/plc_sorting_system.avif", caption: "Full 3D digital twin Factory I/O simulation cell overview" },
+      { url: "/images/plc_sorting_hmi.avif", caption: "WinCC KTP700 Basic HMI live running dashboard with animated sensors" },
+      { url: "/images/plc_sorting_panel.avif", caption: "Physical control cabinet with illuminated buttons and digital LED counters" },
+      { url: "/images/plc_sorting_network.avif", caption: "PROFINET subnet network topology connecting S7-1500 and KTP700" },
+      { url: "/images/plc_sorting_action.avif", caption: "Pneumatic pusher diverting green raw material into chute" }
     ],
     tags: ["Siemens S7-1500", "TIA Portal v16", "KTP700 HMI", "Factory I/O", "PROFINET", "Ladder Logic (LAD)", "PLCSIM"],
     features: [

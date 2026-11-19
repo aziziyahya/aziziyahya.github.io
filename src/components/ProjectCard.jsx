@@ -59,7 +59,6 @@ export default function ProjectCard({ project, onSelect }) {
         }}
       >
         <img
-          key={currentImgIndex}
           src={currentImage.url}
           alt={currentImage.caption || project.title}
           className="card-img card-img-fade"

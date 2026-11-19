@@ -20,6 +20,18 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
     }
   }, [project, initialIndex, initialFullscreen]);
 
+  // Preload all gallery images in background for instant 0ms switching
+  useEffect(() => {
+    if (gallery && gallery.length > 0) {
+      gallery.forEach((item) => {
+        if (item?.url) {
+          const preloader = new window.Image();
+          preloader.src = item.url;
+        }
+      });
+    }
+  }, [gallery]);
+
   // Listen to native fullscreen changes
   useEffect(() => {
     const onFsChange = () => setIsNativeFs(!!document.fullscreenElement);
@@ -139,7 +151,6 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                 title="Click to view full screen"
               >
                 <img
-                  key={activeImgIndex}
                   src={currentImg.url}
                   alt={currentImg.caption || project.title}
                   className="card-img modal-main-img"
@@ -338,7 +349,6 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
             onTouchEnd={handleLightboxTouchEnd}
           >
             <img
-              key={activeImgIndex}
               src={currentImg.url}
               alt={currentImg.caption || project.title}
               className="lightbox-img"
