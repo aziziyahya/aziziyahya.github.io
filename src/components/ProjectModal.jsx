@@ -151,10 +151,10 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
                 title="Click to view full screen"
               >
                 <img
-                  key={activeImgIndex}
                   src={currentImg.url}
                   alt={currentImg.caption || project.title}
                   className="card-img modal-main-img"
+                  decoding="async"
                 />
 
                 {/* Full Screen Button inside Modal Image */}
@@ -350,10 +350,10 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
             onTouchEnd={handleLightboxTouchEnd}
           >
             <img
-              key={activeImgIndex}
               src={currentImg.url}
               alt={currentImg.caption || project.title}
               className="lightbox-img"
+              decoding="async"
             />
 
             {gallery.length > 1 && (

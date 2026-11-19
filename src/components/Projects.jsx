@@ -41,6 +41,24 @@ export default function Projects() {
     return () => window.removeEventListener('popstate', parseDeepLink);
   }, []);
 
+  // Preload all project images in background for instant 0ms switching
+  useEffect(() => {
+    const urls = new Set();
+    projectsData.forEach((p) => {
+      if (p.image) urls.add(p.image);
+      if (p.gallery) {
+        p.gallery.forEach((g) => {
+          if (g?.url) urls.add(g.url);
+        });
+      }
+    });
+
+    urls.forEach((url) => {
+      const img = new window.Image();
+      img.src = url;
+    });
+  }, []);
+
   const handleSelectProject = (project, imgIndex = 0, fullscreen = false) => {
     setSelectedProject(project);
     setInitialImageIndex(imgIndex);
