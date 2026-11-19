@@ -137,7 +137,7 @@ export const projectsData = [
 ];
 
 export const personalInfo = {
-  name: "Nik Mohamad Azizi Nik Yahya",
+  name: "Nik Mohamad Azizi Bin Nik Yahya",
   preferredName: "Azizi Yahya",
   title: "Industrial Electronic Automation & Embedded Systems",
   degree: "Bachelor of Technology (B.Tech) in Industrial Electronic Automation",

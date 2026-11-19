@@ -71,7 +71,7 @@ export default function Hero() {
                   &#123;
                 </div>
                 <div className="terminal-line" style={{ paddingLeft: '16px' }}>
-                  "name": "Nik Mohamad Azizi Nik Yahya",
+                  "name": "Nik Mohamad Azizi Bin Nik Yahya",
                 </div>
                 <div className="terminal-line" style={{ paddingLeft: '16px' }}>
                   "programme": "Industrial Electronic Automation",

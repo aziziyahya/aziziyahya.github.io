@@ -7,7 +7,7 @@
 
 > 🌐 **Live Portfolio Website:** [https://aziziyahya.github.io](https://aziziyahya.github.io)
 
-Personal technology portfolio of **Nik Mohamad Azizi Nik Yahya (Azizi Yahya)** — undergraduate in **Bachelor of Technology (B.Tech) in Industrial Electronic Automation** at **Universiti Malaysia Perlis (UniMAP)** with a graduated background in **Diploma Teknologi Maklumat (Teknologi Digital)**.
+Personal technology portfolio of **Nik Mohamad Azizi Bin Nik Yahya (Azizi Yahya)** — undergraduate in **Bachelor of Technology (B.Tech) in Industrial Electronic Automation** at **Universiti Malaysia Perlis (UniMAP)** with a graduated background in **Diploma Teknologi Maklumat (Teknologi Digital)**.
 
 Built with **React 19**, **Vite**, and mobile-first responsive CSS, designed to showcase technical capabilities across industrial automation, real-time embedded systems, and software development for internship opportunities.
 
@@ -103,7 +103,7 @@ aziziyahya.github.io/
 
 ## 👤 Profile & Contact
 
-- **Full Name:** Nik Mohamad Azizi Nik Yahya
+- **Full Name:** Nik Mohamad Azizi Bin Nik Yahya
 - **Programme:** Bachelor of Technology (B.Tech) in Industrial Electronic Automation, UniMAP
 - **Prior Qualification:** Diploma Teknologi Maklumat (Teknologi Digital) [Graduated]
 - **Email:** [nikazizicareer@gmail.com](mailto:nikazizicareer@gmail.com)
