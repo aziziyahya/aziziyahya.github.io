@@ -11,18 +11,18 @@ export const projectsData = [
       "Autonomous inverted pendulum robot built on ESP32 running a deterministic 200 Hz FreeRTOS PID loop. Features sensor fusion, obstacle clearing, and an OTA Wi-Fi telemetry dashboard for live tuning.",
     fullDescription:
       "Developed for NMT22104: Data Acquisition Technology and Analysis II at UniMAP. The robot overcomes inverted pendulum structural instability while executing an autonomous arena-clearing mission: scanning, pursuing, and pushing five obstacles out of a 1-meter radius circular arena without crossing boundary lines. Includes an asynchronous Wi-Fi Web Dashboard for live telemetry and dynamic PID gain calibration.",
-    image: "/images/robot_front.png",
+    image: "/images/slide_11_robot_front.png",
     gallery: [
-      { url: "/images/robot_front.png", caption: "Front chassis view with MPU-6050 & VL53L0X ToF laser sensor" },
-      { url: "/images/robot_isometric.png", caption: "Assembled physical prototype 3/4 perspective view on workbench" },
-      { url: "/images/robot_balancing_test.png", caption: "Autonomous 200 Hz PID dynamic upright balance test on floor" },
-      { url: "/images/robot_arena_pushing.png", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
-      { url: "/images/robot_arena_boundary.png", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
-      { url: "/images/robot_circuit.png", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
-      { url: "/images/robot_dashboard_monitoring.png", caption: "Web Dashboard Suite (1/4): Real-time telemetry monitoring" },
-      { url: "/images/robot_dashboard_pid.png", caption: "Web Dashboard Suite (2/4): Dynamic over-the-air PID parameter tuning" },
-      { url: "/images/robot_dashboard_motor.png", caption: "Web Dashboard Suite (3/4): Motor deadband & acceleration calibration" },
-      { url: "/images/robot_dashboard_update.png", caption: "Web Dashboard Suite (4/4): Manual update, gyro recalibration & flash persistence" }
+      { url: "/images/slide_11_robot_front.png", caption: "Front chassis view with MPU-6050 & VL53L0X ToF laser sensor" },
+      { url: "/images/slide_11_robot_isometric.png", caption: "Assembled physical prototype 3/4 perspective view on workbench" },
+      { url: "/images/slide_16_balancing_test.png", caption: "Autonomous 200 Hz PID dynamic upright balance test on floor" },
+      { url: "/images/slide_17_arena_pushing.png", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
+      { url: "/images/slide_17_arena_boundary.png", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
+      { url: "/images/slide_10_circuit_schematic.png", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
+      { url: "/images/slide_13_dashboard_monitoring.png", caption: "Web Dashboard Suite (1/4): Real-time telemetry monitoring" },
+      { url: "/images/slide_13_dashboard_pid.png", caption: "Web Dashboard Suite (2/4): Dynamic over-the-air PID parameter tuning" },
+      { url: "/images/slide_13_dashboard_motor.png", caption: "Web Dashboard Suite (3/4): Motor deadband & acceleration calibration" },
+      { url: "/images/slide_13_dashboard_update.png", caption: "Web Dashboard Suite (4/4): Manual update, gyro recalibration & flash persistence" }
     ],
     tags: ["ESP32", "FreeRTOS", "PID Control", "C++", "MPU-6050", "VL53L0X", "TB6612FNG", "WebSockets"],
     features: [
