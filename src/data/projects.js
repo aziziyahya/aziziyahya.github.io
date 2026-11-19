@@ -19,8 +19,10 @@ export const projectsData = [
       { url: "/images/robot_arena_pushing.png", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
       { url: "/images/robot_arena_boundary.png", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
       { url: "/images/robot_circuit.png", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
-      { url: "/images/robot_dashboard.png", caption: "Asynchronous Wi-Fi Web Dashboard: Live telemetry monitoring" },
-      { url: "/images/robot_pid_tuning.png", caption: "Asynchronous Wi-Fi Web Dashboard: Wireless PID parameter calibration" }
+      { url: "/images/robot_dashboard_monitoring.png", caption: "Web Dashboard Suite (1/4): Real-time telemetry monitoring" },
+      { url: "/images/robot_dashboard_pid.png", caption: "Web Dashboard Suite (2/4): Dynamic over-the-air PID parameter tuning" },
+      { url: "/images/robot_dashboard_motor.png", caption: "Web Dashboard Suite (3/4): Motor deadband & acceleration calibration" },
+      { url: "/images/robot_dashboard_update.png", caption: "Web Dashboard Suite (4/4): Manual update, gyro recalibration & flash persistence" }
     ],
     tags: ["ESP32", "FreeRTOS", "PID Control", "C++", "MPU-6050", "VL53L0X", "TB6612FNG", "WebSockets"],
     features: [
