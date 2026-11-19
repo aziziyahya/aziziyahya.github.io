@@ -14,10 +14,14 @@ export const projectsData = [
     image: "/images/robot_front.png",
     gallery: [
       { url: "/images/robot_front.png", caption: "Front chassis view with MPU-6050 & VL53L0X ToF laser sensor" },
+      { url: "/images/robot_isometric.png", caption: "Assembled prototype 3/4 perspective view on workbench" },
       { url: "/images/robot_back.png", caption: "Rear view with dual 18650 Li-ion cells & TB6612FNG motor driver" },
+      { url: "/images/robot_balancing_test.png", caption: "Autonomous 200 Hz PID dynamic upright balance test on floor" },
+      { url: "/images/robot_arena_pushing.png", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
+      { url: "/images/robot_arena_boundary.png", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
       { url: "/images/robot_circuit.png", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
       { url: "/images/robot_dashboard.png", caption: "Asynchronous Wi-Fi Web Dashboard for live telemetry and PID tuning" },
-      { url: "/images/robot_cad.png", caption: "Isometric 3D CAD mechanical assembly render" }
+      { url: "/images/robot_dimension_drawing.png", caption: "Chassis mechanical layout and orthographic dimension drawing" }
     ],
     tags: ["ESP32", "FreeRTOS", "PID Control", "C++", "MPU-6050", "VL53L0X", "TB6612FNG", "WebSockets"],
     features: [
