@@ -39,7 +39,7 @@ export const projectsData = [
   },
   {
     id: "plc-automated-conveyor-sorting",
-    title: "Automated Modular Conveyor Assembly & Sorting System",
+    title: "Multi-Station Assembly & Sorting System (Festo MPS)",
     category: "Industrial Automation",
     categoryKey: "automation",
     course: "NMT12505: Industrial Automation II",
@@ -103,7 +103,7 @@ export const projectsData = [
   },
   {
     id: "plc-colour-sorting-machine",
-    title: "Industrial Colour Counting & Sorting System",
+    title: "Colour Sorting & Counting System (HMI & Factory I/O)",
     category: "Industrial Automation",
     categoryKey: "automation",
     course: "TIA Portal Programming Level 1 (TIA-PRO1)",
