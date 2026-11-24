@@ -130,7 +130,7 @@ export const projectsData = [
       "Two-stage industrial fault alarm matrix with mandatory operator acknowledgment and reset protocols"
     ],
     links: {
-      github: "https://github.com/aziziyahya/PLC_AutomatedModularProduction WithSiemensAndFesto",
+      github: "https://github.com/aziziyahya/PLC_AutomatedModularProduction-WithSiemensAndFesto",
       badge: "Siemens S7-1500 + HMI"
     }
   }
