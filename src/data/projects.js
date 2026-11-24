@@ -65,7 +65,7 @@ export const projectsData = [
       "Root Cause Analysis and preventive maintenance protocols developed for minimal production downtime"
     ],
     links: {
-      github: "https://github.com/aziziyahya/PLC_AutomatedConveyorSorting",
+      github: "https://github.com/aziziyahya/PLC_MultiStationAssemblyAndSorting-WithFestoMPSAndSiemensPLC",
       badge: "Festo MPS + Siemens"
     }
   },
