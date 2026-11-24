@@ -41,25 +41,39 @@ export default function Projects() {
     return () => window.removeEventListener('popstate', parseDeepLink);
   }, []);
 
-  // Preload all project images in background for instant 0ms switching
-  useEffect(() => {
-    const urls = new Set();
-    projectsData.forEach((p) => {
-      if (p.image) urls.add(p.image);
-      if (p.gallery) {
-        p.gallery.forEach((g) => {
-          if (g?.url) urls.add(g.url);
-        });
+  // Cache to track URLs already preloaded to prevent duplicate requests
+  const preloadedUrls = React.useRef(new Set());
+
+  const preloadProjectGallery = (project) => {
+    if (!project) return;
+    const urls = [];
+    if (project.image) urls.push(project.image);
+    if (project.gallery) {
+      project.gallery.forEach((g) => {
+        if (g?.url) urls.push(g.url);
+      });
+    }
+    urls.forEach((url) => {
+      if (!preloadedUrls.current.has(url)) {
+        preloadedUrls.current.add(url);
+        const img = new window.Image();
+        img.src = url;
       }
     });
+  };
 
-    urls.forEach((url) => {
-      const img = new window.Image();
-      img.src = url;
-    });
+  // Preload only the primary featured project after idle time (non-blocking)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (projectsData[0]) {
+        preloadProjectGallery(projectsData[0]);
+      }
+    }, 2500);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleSelectProject = (project, imgIndex = 0, fullscreen = false) => {
+    preloadProjectGallery(project);
     setSelectedProject(project);
     setInitialImageIndex(imgIndex);
     setOpenInFullscreen(fullscreen);
@@ -133,10 +147,12 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}
+              index={index}
+              onHover={preloadProjectGallery}
               onSelect={handleSelectProject}
             />
           ))}

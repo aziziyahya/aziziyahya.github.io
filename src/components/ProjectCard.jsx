@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowUpRight, Calendar, ChevronLeft, ChevronRight, ExternalLink, Images, Maximize2 } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
-export default function ProjectCard({ project, onSelect }) {
+export default function ProjectCard({ project, onSelect, index = 0, onHover }) {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(null);
 
@@ -42,11 +42,18 @@ export default function ProjectCard({ project, onSelect }) {
   const currentImage = gallery[currentImgIndex] || gallery[0];
 
   return (
-    <div className="project-card">
+    <div
+      className="project-card"
+      onMouseEnter={() => onHover && onHover(project)}
+      onFocus={() => onHover && onHover(project)}
+    >
       <div
         className="card-image-box"
         onClick={() => onSelect(project, currentImgIndex)}
-        onTouchStart={handleTouchStart}
+        onTouchStart={(e) => {
+          handleTouchStart(e);
+          if (onHover) onHover(project);
+        }}
         onTouchEnd={handleTouchEnd}
         role="button"
         tabIndex={0}
@@ -62,7 +69,8 @@ export default function ProjectCard({ project, onSelect }) {
           src={currentImage.url}
           alt={currentImage.caption || project.title}
           className="card-img card-img-fade"
-          loading="eager"
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchpriority={index === 0 ? "high" : "auto"}
           decoding="async"
         />
 
