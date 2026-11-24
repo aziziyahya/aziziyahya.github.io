@@ -20,17 +20,19 @@ export default function ProjectModal({ project, initialIndex = 0, initialFullscr
     }
   }, [project, initialIndex, initialFullscreen]);
 
-  // Preload all gallery images in background for instant 0ms switching
+  // Preload adjacent images for fast responsive carousel navigation
   useEffect(() => {
-    if (gallery && gallery.length > 0) {
-      gallery.forEach((item) => {
-        if (item?.url) {
+    if (gallery && gallery.length > 1) {
+      const nextIdx = (activeImgIndex + 1) % gallery.length;
+      const prevIdx = (activeImgIndex - 1 + gallery.length) % gallery.length;
+      [gallery[nextIdx]?.url, gallery[prevIdx]?.url].forEach((url) => {
+        if (url) {
           const preloader = new window.Image();
-          preloader.src = item.url;
+          preloader.src = url;
         }
       });
     }
-  }, [gallery]);
+  }, [gallery, activeImgIndex]);
 
   // Listen to native fullscreen changes
   useEffect(() => {

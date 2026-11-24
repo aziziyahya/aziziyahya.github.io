@@ -62,16 +62,6 @@ export default function Projects() {
     });
   };
 
-  // Preload only the primary featured project after idle time (non-blocking)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (projectsData[0]) {
-        preloadProjectGallery(projectsData[0]);
-      }
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleSelectProject = (project, imgIndex = 0, fullscreen = false) => {
     preloadProjectGallery(project);
     setSelectedProject(project);
