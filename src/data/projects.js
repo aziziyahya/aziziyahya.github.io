@@ -18,7 +18,7 @@ export const projectsData = [
       { url: "/images/slide_16_balancing_test.avif", caption: "Autonomous 200 Hz PID dynamic upright balance test on floor" },
       { url: "/images/slide_17_arena_pushing.avif", caption: "Tournament arena trial: Obstacle tracking and high-torque pushing" },
       { url: "/images/slide_17_arena_boundary.avif", caption: "Tournament arena trial: TCRT5000 IR perimeter line containment" },
-      { url: "/images/slide_10_circuit_schematic.avif", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
+      { url: "/images/slide_10_circuit_schematic2.avif", caption: "Complete schematic & dual-bus I2C power regulation architecture" },
       { url: "/images/slide_13_dashboard_monitoring.avif", caption: "Web Dashboard Suite (1/4): Real-time telemetry monitoring" },
       { url: "/images/slide_13_dashboard_pid.avif", caption: "Web Dashboard Suite (2/4): Dynamic over-the-air PID parameter tuning" },
       { url: "/images/slide_13_dashboard_motor.avif", caption: "Web Dashboard Suite (3/4): Motor deadband & acceleration calibration" },
