@@ -18,8 +18,9 @@ Built with **React 19**, **Vite**, and mobile-first responsive CSS, designed to 
 | Project | Domain | Key Stack | Repository |
 |---|---|---|---|
 | **M4T-CH4: Self-Balancing Robot** | Robotics & Control | ESP32, FreeRTOS (200 Hz PID), MPU-6050, VL53L0X, WebSockets | [ESP32_SelfBalancingRobot](https://github.com/aziziyahya/ESP32_SelfBalancingRobot) |
-| **Conveyor Assembly & Sorting System** | Industrial Automation | Siemens S7-1500, TIA Portal V16, Festo MPS, PROFINET, Safety Interlocks | [PLC_AutomatedConveyorSorting](https://github.com/aziziyahya/PLC_AutomatedConveyorSorting) |
+| **Modular Conveyor Assembly & Sorting System** | Industrial Automation | Siemens S7-1500, TIA Portal V16, Festo MPS, PROFINET, Safety Interlocks | [PLC_AutomatedConveyorSorting](https://github.com/aziziyahya/PLC_AutomatedConveyorSorting) |
 | **Assignment Management Application** | Software Development | Python 3, Tkinter / ttk Desktop GUI, Dynamic Calendar, JSON / CSV | [PYTHON_AssignmentManagementApplication](https://github.com/aziziyahya/PYTHON_AssignmentManagementApplication) |
+| **Industrial Colour Counting & Sorting System** | Industrial Automation | Siemens S7-1500 (CPU 1516-3), KTP700 Basic HMI, Factory I/O 3D Twin, PROFINET, LAD | [PLC_AutomatedModularProduction-WithSiemensAndFesto](https://github.com/aziziyahya/PLC_AutomatedModularProduction-WithSiemensAndFesto) |
 
 ---
 
